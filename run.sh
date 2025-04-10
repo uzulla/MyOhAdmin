@@ -11,8 +11,8 @@ if ! [[ "$OPENHANDS_INSTANCE_ID" =~ ^[0-9]+$ ]]; then
   exit 1
 fi
 
-CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/openhands:0.31
-SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.31-nikolaik
+CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/openhands:0.32
+SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.32-nikolaik
 VOLUME=~/openhands-$OPENHANDS_INSTANCE_ID
 
 # setup env
