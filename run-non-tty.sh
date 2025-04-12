@@ -25,7 +25,7 @@ EXPOSE_PORT=$((BASE_PORT + OPENHANDS_INSTANCE_ID - 1))
 sudo mkdir -p $VOLUME
 sudo chmod 777 $VOLUME
 
-sudo docker run -it \
+sudo docker run -d \
     --rm \
     --pull=always \
     -e LLM_NUM_RETRIES=10 \

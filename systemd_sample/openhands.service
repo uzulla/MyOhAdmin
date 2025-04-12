@@ -1,0 +1,21 @@
+[Unit]
+Description=OpenHands
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/dev/MyOhAdmin
+Environment="OPENHANDS_INSTANCE_ID=1"
+ExecStart=/bin/bash /home/dev/MyOhAdmin/run-non-tty.sh
+ExecStop=/bin/bash -c 'docker stop openhands-app-${OPENHANDS_INSTANCE_ID}'
+TimeoutStartSec=0
+TimeoutStopSec=180
+Restart=on-failure
+RestartSec=10
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
